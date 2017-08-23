@@ -14,4 +14,6 @@ Outline:
 
 ## Notes
 - Presenter: Safia Abdalla @captainsafia safia.rocks
--
+- Jupyter is a web application and as such can leverage web technologies
+- Jupyter extensions can extend either front-end (JS) OR back-end (Python) of Jupyter
+- Jupyter uses Tornado server
