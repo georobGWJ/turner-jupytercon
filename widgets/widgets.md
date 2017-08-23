@@ -19,3 +19,5 @@ Sylvain Corlay and Jason Grout offer an overview of the functionalities provided
 - Changes to a widget affect ALL instances of that widget in a notebook.
 - A JavaScript object in a notebook is referred to as a __model__
 - You can use icons from [font awesome](http://fontawesome.io/)
+- ALL widgets can be styled using CSS and Flexbox!
+- Jupyter is like a front-end and a kernel is like a server conceptually.
