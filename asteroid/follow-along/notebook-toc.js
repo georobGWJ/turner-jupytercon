@@ -1,5 +1,4 @@
-define(['base/js/namespace', 'base/js/utils', 'jquery'], function(Jupyter, utils, $)
-{
+define(['base/js/namespace', 'base/js/utils', 'jquery'], function(Jupyter, utils, $) {
     function create_toc_text() {
       var toc_text = "# Table of Contents\n";
       // Get an array of cell objects
@@ -11,21 +10,25 @@ define(['base/js/namespace', 'base/js/utils', 'jquery'], function(Jupyter, utils
         var cell = cells[i];
         if (cell.cell_type === 'markdown') {
           var cell_content = cell.get_text();
-          if (cell_content.startsWith'#') {
+          if (cell_content.startsWith('#')) {
             heading_count++;
             var last_hash_idx = cell_content.lastIndexOf('#'); // Grabs test starting after last '#'
             // SEE LINES 18 to 21 OF IMPLEMENTED CODE FOR a FIX!!!
             var hash_num = last_hash_idx + 1;
             var heading_title = cell_content.substr(hash_num);
             // Now create Link to heading
-            var link_fragment_heading = heading_title.toLowerCase().replace(" ","_");
-            // Currently we need to do links via HTML
+            var first_tag = heading_title.indexOf("<");
+            if (first_tag != -1) {
+                heading_title = heading_title.slice(0, first_tag);
+            }
+            // Create a <a> tag for linking to fragment
+            var link_fragment_heading = heading_title.toLowerCase().replace(" ", "_");
             var link_fragment = '<a name="' + link_fragment_heading + '"></a>';
             cell.set_text(cell.get_text() + link_fragment);
             cell.render();    // refresh cell
             // Append to String of Header links
-            toc_text += (Array(hash_num).join(' ') + '-');
-            toc_text += '[' + heading_title + '](#' + link_fragment_heading + ') \n';
+            toc_text += (Array(hash_num).join('  ') + '- ');
+            toc_text += ('[' + heading_title + '](#' + link_fragment_heading + ') \n');
           }
         }
       }
@@ -68,20 +71,20 @@ define(['base/js/namespace', 'base/js/utils', 'jquery'], function(Jupyter, utils
         {
           'label': 'Create Table of Contents',      // Hover tooltip
           'icon': 'fa-table',                       // Font-Awesome icon
-          'callback': 'create_toc',                 // What to do when button is clicked
+          'callback': create_toc,                 // What to do when button is clicked
           'id': 'create-toc-btn'                    // Unique ID
         },
         {
           'label': 'Refresh Table of Contents',
           'icon': 'fa-refresh',
-          'callback': 'refresh_toc',
+          'callback': refresh_toc,
           'id': 'refresh-toc-btn'
         }
       ])
     }
 
     function load_ipython_extension() {
-      console.log('Loading notebook-toc extensions...');
+      console.log('Loading notebook-toc extension...');
       place_toc_button();
     }
 
