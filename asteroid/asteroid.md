@@ -19,3 +19,5 @@ Outline:
 - Jupyter uses Tornado server
 - Can be distributed as Python packages (pip) or JS files
 - Interfaces with via `nbextension` or `jupyter serverextension` commands
+- Kernal Vido Link [YouTube](https://www.youtube.com/watch?v=LeMwtpYootY)
+- See slides for many more links to resources and help
