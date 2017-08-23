@@ -8,9 +8,10 @@ Outline:
 
 - Introduction (15 minutes)
 - A JavaScript primer (45 minutes): Get a brief overview of JavaScript, the central language in the Jupyter ecosystem
-- Jupyter extensions (45 minutes): Learn how to develop Jupyter extensions and develop an extension that autoformats the code in code cells
-- Jupyter kernels (1 hour): Learn how the Jupyter frontend interfaces with Jupyter kernels and develop a bash kernel using the Python wrapper
+- Jupyter extensions (45 minutes): Learn how to develop Jupyter extensions and develop an extension that creates a table of contents
+- Jupyter kernels (1 hour): Learn how the Jupyter frontend interfaces with Jupyter kernels and develop a Pig Latin kernel using the Python wrapper
 - Conclusion and Q&A (15 minutes): Explore resources for learning more about developing on the Jupyter Notebook, example exercises, and how to use your new knowledge to improve workflows and productivity at your company or research lab
 
 ## Notes
-- 
+- Presenter: Safia Abdalla @captainsafia safia.rocks
+-
