@@ -17,3 +17,5 @@ Outline:
 - Jupyter is a web application and as such can leverage web technologies
 - Jupyter extensions can extend either front-end (JS) OR back-end (Python) of Jupyter
 - Jupyter uses Tornado server
+- Can be distributed as Python packages (pip) or JS files
+- Interfaces with via `nbextension` or `jupyter serverextension` commands
